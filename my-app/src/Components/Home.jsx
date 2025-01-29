@@ -3,7 +3,6 @@ import sleepingbags from "../images/sleeping-bags.jpg";
 import shoppacks from "../images/shop-packs.jpg";
 import rainwear from "../images/rainwear.jpg";
 import bestseller from "../images/bestsellers.png";
-// import hat from "../images/hat.png";
 import surfing from "../images/surfing_lessons.jpg";
 import boots from "../images/boots.jpg";
 import gymfit from "../images/gym-fit.jpg";

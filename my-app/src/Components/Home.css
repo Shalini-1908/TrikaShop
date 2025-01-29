@@ -120,7 +120,6 @@
   font-size: 18px;
 }
 
-/* Mega Menu */
 .mega-menu {
   position: relative;
   width: 90%;
@@ -130,12 +129,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  /* border: 1px solid teal; */
 }
 
-/* Menu links */
 .menu-items a {
-  /* display: inline-block; */
   padding: 10px 20px;
   text-decoration: none;
   color: #000;
@@ -269,14 +265,12 @@
   margin: 50px auto;
   display: flex;
   flex-direction: column;
-  /* border: 2px solid red; */
 }
 
 .carousel-content {
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   height: 90px;
   text-align: left;
   margin-top: 20px;
@@ -285,7 +279,6 @@
 
 .text-container {
   color: #333;
-  /* margin-left: 65px; */
 }
 
 .carousel-heading {
@@ -337,10 +330,8 @@
 
 .carousel-image.active {
   opacity: 0.6;
-  /* transform: scale(1); */
 }
 
-/* Progress Bar Styles */
 .progress-bar-container {
   width: 100%;
   height: 5px;
@@ -540,7 +531,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  /* border: 2px solid red; */
 }
 
 .community-heading-container {
@@ -616,7 +606,6 @@
   margin: 50px auto;
   display: flex;
   flex-direction: column;
-  /* border: 2px solid red; */
 }
 
 .featured-carousel-content {
@@ -648,11 +637,9 @@
 
 .featured-carousel-images {
   display: flex;
-
   overflow: hidden;
   margin: 0px auto;
   gap: 20px;
-  /* border: 1px solid rebeccapurple; */
 }
 
 .image-bg-container {
@@ -700,7 +687,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* border: 2px solid red; */
   margin-top: 20px;
   justify-content: center;
 }
@@ -742,7 +728,6 @@
   display: flex;
   width: 90%;
   max-width: 1250px;
-  /* border: 2px solid chartreuse; */
   align-items: center;
   justify-content: space-between;
   margin: 60px auto;
@@ -788,7 +773,6 @@
   font-size: 32px;
   width: 500px;
   font-weight: bolder;
-  /* border: 2px solid rebeccapurple; */
   padding: 10px 0px;
 }
 
@@ -810,7 +794,6 @@
   align-items: center;
 }
 
-/* Individual column styling */
 .shop-column {
   padding: 15px;
   text-align: center;
