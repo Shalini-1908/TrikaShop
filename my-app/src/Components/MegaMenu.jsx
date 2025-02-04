@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import location from "../images/direction.png";
 import interogation from "../images/interrogation-mark.png";
 import usa from "../images/usa.png";
 import { Link } from "react-router-dom";
+import "../Css/MegaMenu.css";
 
-function MegaMenu() {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  // Toggle dropdown function
-  const toggleDropdown = (id) => {
-    if (openDropdown === id) {
-      setOpenDropdown(null);
-    } else {
-      setOpenDropdown(id);
-    }
-  };
-
+export const MegaMenu = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (event.target.closest(".mega-menu") === null) {
@@ -29,8 +19,16 @@ function MegaMenu() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  const [openDropdown, setOpenDropdown] = useState("");
+  const menuRef = useRef(null);
+
+  const toggleDropdown = (menu) => {
+    setOpenDropdown((prev) => (prev === menu ? "" : menu));
+  };
+
   return (
-    <div>
+    <>
       <div className="right-options">
         <div
           style={{
@@ -64,7 +62,6 @@ function MegaMenu() {
           <option value="eur">EUR</option>
         </select>
       </div>
-
       <header className="mega-menu">
         <nav className="menu-items">
           <Link to="/product">
@@ -570,8 +567,6 @@ function MegaMenu() {
           </div>
         </div>
       </header>
-    </div>
+    </>
   );
-}
-
-export default MegaMenu;
+};

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import sleepingbags from "../images/sleeping-bags.jpg";
 import shoppacks from "../images/shop-packs.jpg";
 import rainwear from "../images/rainwear.jpg";
@@ -25,11 +25,11 @@ import pinterest from "../images/pinterest.png";
 import insta from "../images/insta.png";
 import youtube from "../images/yt.png";
 import arrow from "../images/arrow.png";
+import { MegaMenu } from "./MegaMenu";
+import "../Css/Home.css";
+import "../../src/style.css";
 
-import "./Home.css";
-import MegaMenu from "./MegaMenu";
-
-const Home = () => {
+export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -74,10 +74,11 @@ const Home = () => {
         <MegaMenu />
 
         <section className="banner">
+          <div className="banner-image"></div>
           <div className="banner-content">
             <h1 className="banner-heading">GET CHANGED.</h1>
             <h1 className="banner-heading">STAY WARM.</h1>
-            <p>Outdoor gear to keep you going.Any weather, anywhere</p>
+            <p>Outdoor gear to keep you going. Any weather, anywhere.</p>
             <a href="#shop-now" className="banner-button">
               Shop Now
             </a>
@@ -192,129 +193,129 @@ const Home = () => {
           </div>
 
           <div className="featured-carousel-images">
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
+              <div className="image-content">
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
 
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
-                <div className="color-options">
+              <div className="image-content">
+                <div className="product-color-options">
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#7f9cb9" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#262628" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#b79a7a" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#f4ede6" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
 
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
-                <div className="color-options">
+              <div className="image-content">
+                <div className="product-color-options">
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#7f9cb9" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#262628" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#b79a7a" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#f4ede6" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
 
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
-                <div className="color-options">
+              <div className="image-content">
+                <div className="product-color-options">
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#7f9cb9" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#262628" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#b79a7a" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#f4ede6" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
           </div>
@@ -352,129 +353,129 @@ const Home = () => {
           </div>
 
           <div className="featured-carousel-images">
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
+              <div className="image-content">
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
 
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
-                <div className="color-options">
+              <div className="image-content">
+                <div className="product-color-options">
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#7f9cb9" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#262628" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#b79a7a" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#f4ede6" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
 
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
-                <div className="color-options">
+              <div className="image-content">
+                <div className="product-color-options">
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#7f9cb9" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#262628" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#b79a7a" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#f4ede6" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
 
-            <div className="product-grid">
-              <div className="product-card">
+            <div className="image-grid">
+              <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" className="product-image" />
+                <img src={bag} alt="image 2" className="image-image" />
               </div>
-              <div className="product-content">
-                <div className="color-options">
+              <div className="image-content">
+                <div className="product-color-options">
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#7f9cb9" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#262628" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#b79a7a" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#f4ede6" }}
                   ></div>
                   <div
-                    className="color-circle"
+                    className="product-color-circle"
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="product-rating" />
+                <img src={stars} alt="Rating" className="image-rating" />
               </div>
             </div>
           </div>
@@ -489,13 +490,12 @@ const Home = () => {
         </section>
 
         <section className="about-trika-container">
-          <div>
-            <img src="https://sportano.pl/blog/wp-content/uploads/2023/09/impregnacja-DWR-co-to-jest-i-jak-dziala.jpg" />
-          </div>
+          <img src="https://sportano.pl/blog/wp-content/uploads/2023/09/impregnacja-DWR-co-to-jest-i-jak-dziala.jpg" />
+
           <div className="about-trika">
             <p className="about-trika-heading">ABOUT TRIKA</p>
             <p className="trika-mission">
-              Our mission is to create exceptional products while upholding our
+              Our mission is to create exceptional images while upholding our
               responsibility towards Mother Nature,our communities,and the
               future ahead
             </p>
@@ -551,7 +551,7 @@ const Home = () => {
           </div>
 
           <div className="buy-photos">
-            <p>click on the photos to buy products</p>
+            <p>click on the photos to buy images</p>
             <button>Shop Our Instagram</button>
           </div>
         </section>
@@ -659,63 +659,63 @@ const Home = () => {
           </div>
 
           <div className="recently-carousel-images">
-            <div class="product-grid">
-              <div class="product-card">
+            <div class="image-grid">
+              <div class="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" class="product-image" />
+                <img src={bag} alt="image 2" class="image-image" />
               </div>
-              <div class="product-content">
+              <div class="image-content">
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" class="product-rating" />
+                <img src={stars} alt="Rating" class="image-rating" />
               </div>
             </div>
 
-            <div class="product-grid">
-              <div class="product-card">
+            <div class="image-grid">
+              <div class="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" class="product-image" />
+                <img src={bag} alt="image 2" class="image-image" />
               </div>
-              <div class="product-content">
+              <div class="image-content">
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" class="product-rating" />
+                <img src={stars} alt="Rating" class="image-rating" />
               </div>
             </div>
 
-            <div class="product-grid">
-              <div class="product-card">
+            <div class="image-grid">
+              <div class="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" class="product-image" />
+                <img src={bag} alt="image 2" class="image-image" />
               </div>
-              <div class="product-content">
+              <div class="image-content">
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" class="product-rating" />
+                <img src={stars} alt="Rating" class="image-rating" />
               </div>
             </div>
 
-            <div class="product-grid">
-              <div class="product-card">
+            <div class="image-grid">
+              <div class="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="Product 2" class="product-image" />
+                <img src={bag} alt="image 2" class="image-image" />
               </div>
-              <div class="product-content">
+              <div class="image-content">
                 <p className="brand-name">Nike</p>
                 <p className="product-name">Men's Running Shoes</p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" class="product-rating" />
+                <img src={stars} alt="Rating" class="image-rating" />
               </div>
             </div>
           </div>
@@ -747,9 +747,10 @@ const Home = () => {
 
         <footer>
           <div className="footer-columns">
+            {/* Column 1: Shop */}
             <div className="footer-column">
+              <h4>SHOP</h4>
               <ul>
-                <h4>SHOP</h4>
                 <li>Footwear</li>
                 <li>Clothing</li>
                 <li>Accessories</li>
@@ -757,18 +758,22 @@ const Home = () => {
                 <li>New Arrivals</li>
               </ul>
             </div>
+
+            {/* Column 2: Brand */}
             <div className="footer-column">
+              <h4>BRAND</h4>
               <ul>
-                <h4>BRAND</h4>
                 <li>History</li>
                 <li>Media</li>
                 <li>Affiliate Program</li>
                 <li>Store Locator</li>
               </ul>
             </div>
+
+            {/* Column 3: Help */}
             <div className="footer-column">
+              <h4>HELP</h4>
               <ul>
-                <h4>HELP</h4>
                 <li>Order Status</li>
                 <li>Return Policy & Information</li>
                 <li>Sizing</li>
@@ -777,6 +782,7 @@ const Home = () => {
               </ul>
             </div>
 
+            {/* Column 4: Contact Us */}
             <div className="footer-column">
               <h4>CONTACT US</h4>
               <div className="footer-icon-container">
@@ -805,11 +811,12 @@ const Home = () => {
               </div>
             </div>
 
+            {/* Column 5: Privacy and Terms */}
             <div className="footer-column">
               <div className="privacy">
                 <span>
                   <p>2024 Trika Technologies</p>
-                  <p>Privacy Policy </p>
+                  <p>Privacy Policy</p>
                   <p>|</p>
                   <p>Terms Of Use</p>
                 </span>
@@ -821,5 +828,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
