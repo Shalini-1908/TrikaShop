@@ -15,9 +15,10 @@ import pickup from "../images/pickup.png";
 import delivery from "../images/delivery.png";
 import { Accordion } from "./Accordian";
 import { FaChevronDown } from "react-icons/fa6";
-import "../../src/style.css";
 import { GoPlus } from "react-icons/go";
 import { HiMinus } from "react-icons/hi2";
+import "../../src/style.css";
+import { Footer } from "./Footer";
 
 export const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -370,8 +371,6 @@ export const Product = () => {
         </section>
         {/*big accordian */}
         <section className="big-accordian">
-          {/* <Accordion items={items} /> */}
-
           <h2>About this item</h2>
 
           <div className="about-accordion">
@@ -511,78 +510,7 @@ export const Product = () => {
           </span>
         </section>
       </div>
-      <footer>
-        <div className="footer-columns">
-          <div className="footer-column">
-            <ul>
-              <h4>SHOP</h4>
-              <li>Footwear</li>
-              <li>Clothing</li>
-              <li>Accessories</li>
-              <li>Sale</li>
-              <li>New Arrivals</li>
-            </ul>
-          </div>
-          <div className="footer-column">
-            <ul>
-              <h4>BRAND</h4>
-              <li>History</li>
-              <li>Media</li>
-              <li>Affiliate Program</li>
-              <li>Store Locator</li>
-            </ul>
-          </div>
-          <div className="footer-column">
-            <ul>
-              <h4>HELP</h4>
-              <li>Order Status</li>
-              <li>Return Policy & Information</li>
-              <li>Sizing</li>
-              <li>Shipping Info</li>
-              <li>FAQ</li>
-            </ul>
-          </div>
-
-          <div className="footer-column">
-            <h4>CONTACT US</h4>
-            <div className="footer-icon-container">
-              <div className="contact-item">
-                <img src={phone} className="contact-icon1" alt="Phone" />
-                <span>
-                  <p>1800-102-8243</p>
-                  <p>
-                    <i>Monday-Saturday from (9AM-6PM)</i>
-                  </p>
-                </span>
-              </div>
-
-              <div className="contact-item">
-                <img src={email} className="contact-icon2" alt="Email" />
-                <span>
-                  <p>support@trikatechnologies.com</p>
-                </span>
-              </div>
-            </div>
-
-            <div className="social-media">
-              <img src={insta} alt="Instagram" />
-              <img src={pinterest} alt="Pinterest" />
-              <img src={youtube} alt="YouTube" />
-            </div>
-          </div>
-
-          <div className="footer-column">
-            <div className="privacy">
-              <span>
-                <p>2024 Trika Technologies</p>
-                <p>Privacy Policy </p>
-                <p>|</p>
-                <p>Terms Of Use</p>
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };

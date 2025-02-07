@@ -19,15 +19,12 @@ import community3 from "../images/trika_com3.jpg";
 import community4 from "../images/trika_com4.jpg";
 import community5 from "../images/trika_com5.jpg";
 import community6 from "../images/trika_com6.jpg";
-import phone from "../images/phone.png";
-import email from "../images/email.png";
-import pinterest from "../images/pinterest.png";
-import insta from "../images/insta.png";
-import youtube from "../images/yt.png";
 import arrow from "../images/arrow.png";
 import { MegaMenu } from "./MegaMenu";
 import "../Css/Home.css";
 import "../../src/style.css";
+import { IoIosArrowDown } from "react-icons/io";
+import { Footer } from "../Components/Footer";
 
 export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,32 +37,76 @@ export const Home = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? 3 : prevIndex - 1));
   };
 
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="container">
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "10px 30px",
-          gap: "5px",
-        }}
-      >
-        <label htmlFor="help" style={{ fontSize: "12px" }}>
-          Get $15 For Every $100 Spent
-        </label>
-        <select
+      <div>
+        <div
           style={{
-            width: "20px",
-            backgroundColor: "black",
-            color: "white",
-            border: "none",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "10px 30px",
+            gap: "5px",
           }}
-          id="help"
         >
-          <option value="help-center"></option>
-          <option value="contact-us">Contact Us</option>
-        </select>
+          <label style={{ fontSize: "12px" }}>
+            Get $15 For Every $100 Spent
+          </label>
+          <IoIosArrowDown cursor={"pointer"} onClick={() => setIsOpen(true)} />
+          <div
+            style={{
+              width: "20px",
+              height: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "50%",
+              cursor: "pointer",
+            }}
+          ></div>
+        </div>
+
+        {isOpen && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              maxWidth: "1400px",
+              width: "94%",
+              height: "500px",
+              backgroundColor: "white",
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingTop: "20px",
+              zIndex: 1000,
+            }}
+          >
+            <button
+              onClick={() => setIsOpen(false)}
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "15px",
+                backgroundColor: "transparent",
+                color: "black",
+                border: "1px solid black",
+                padding: "10px 15px",
+                cursor: "pointer",
+                borderRadius: "50%",
+                fontSize: "16px",
+              }}
+            >
+              ✕
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Main Wrapper */}
@@ -74,7 +115,6 @@ export const Home = () => {
         <MegaMenu />
 
         <section className="banner">
-          <div className="banner-image"></div>
           <div className="banner-content">
             <h1 className="banner-heading">GET CHANGED.</h1>
             <h1 className="banner-heading">STAY WARM.</h1>
@@ -157,6 +197,7 @@ export const Home = () => {
             </a>
           </div>
         </section>
+
         {/* For your next adventure */}
         <section className="featured-carousel-container">
           <div className="featured-carousel-content">
@@ -745,85 +786,7 @@ export const Home = () => {
           </span>
         </section>
 
-        <footer>
-          <div className="footer-columns">
-            {/* Column 1: Shop */}
-            <div className="footer-column">
-              <h4>SHOP</h4>
-              <ul>
-                <li>Footwear</li>
-                <li>Clothing</li>
-                <li>Accessories</li>
-                <li>Sale</li>
-                <li>New Arrivals</li>
-              </ul>
-            </div>
-
-            {/* Column 2: Brand */}
-            <div className="footer-column">
-              <h4>BRAND</h4>
-              <ul>
-                <li>History</li>
-                <li>Media</li>
-                <li>Affiliate Program</li>
-                <li>Store Locator</li>
-              </ul>
-            </div>
-
-            {/* Column 3: Help */}
-            <div className="footer-column">
-              <h4>HELP</h4>
-              <ul>
-                <li>Order Status</li>
-                <li>Return Policy & Information</li>
-                <li>Sizing</li>
-                <li>Shipping Info</li>
-                <li>FAQ</li>
-              </ul>
-            </div>
-
-            {/* Column 4: Contact Us */}
-            <div className="footer-column">
-              <h4>CONTACT US</h4>
-              <div className="footer-icon-container">
-                <div className="contact-item">
-                  <img src={phone} className="contact-icon1" alt="Phone" />
-                  <span>
-                    <p>1800-102-8243</p>
-                    <p>
-                      <i>Monday-Saturday from (9AM-6PM)</i>
-                    </p>
-                  </span>
-                </div>
-
-                <div className="contact-item">
-                  <img src={email} className="contact-icon2" alt="Email" />
-                  <span>
-                    <p>support@trikatechnologies.com</p>
-                  </span>
-                </div>
-              </div>
-
-              <div className="social-media">
-                <img src={insta} alt="Instagram" />
-                <img src={pinterest} alt="Pinterest" />
-                <img src={youtube} alt="YouTube" />
-              </div>
-            </div>
-
-            {/* Column 5: Privacy and Terms */}
-            <div className="footer-column">
-              <div className="privacy">
-                <span>
-                  <p>2024 Trika Technologies</p>
-                  <p>Privacy Policy</p>
-                  <p>|</p>
-                  <p>Terms Of Use</p>
-                </span>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );

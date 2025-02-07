@@ -288,7 +288,7 @@
   justify-content: center;
   text-align: center;
   padding: 20px;
-  background-color: red;
+  background-color: #ec3024;
   border: none;
   color: white;
   font-size: 18px;
@@ -393,7 +393,7 @@
 
 .left-quantity {
   margin-top: 10px;
-  color: red;
+  color: #ec3024;
 }
 
 .complete-look-container {
