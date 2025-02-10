@@ -25,9 +25,14 @@ import "../Css/Home.css";
 import "../../src/style.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { Footer } from "../Components/Footer";
+import { ProgressBar } from "../Components/ProgressBar";
 
 export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  //states for progressbar
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const [recentlyViewedIndex, setRecentlyViewedIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % 4);
@@ -134,7 +139,7 @@ export const Home = () => {
                 Lorem lpsum Dolor Sit Amet, Consectetur Adipiscing Elit
               </p>
             </div>
-            <div className="arrow-container">
+            {/* <div className="arrow-container">
               <button
                 className="arrow-btn"
                 onClick={prevSlide}
@@ -146,6 +151,25 @@ export const Home = () => {
                 className="arrow-btn"
                 onClick={nextSlide}
                 aria-label="Next Slide"
+              >
+                <img src="./right-chevron.png" alt="Next" />
+              </button>
+            </div> */}
+
+            <div className="arrow-container">
+              <button
+                className="arrow-btn"
+                onClick={() =>
+                  setCarouselIndex((prev) => (prev > 0 ? prev - 1 : 3))
+                }
+              >
+                <img src="./left-chevron.png" alt="Previous" />
+              </button>
+              <button
+                className="arrow-btn"
+                onClick={() =>
+                  setCarouselIndex((prev) => (prev < 3 ? prev + 1 : 0))
+                }
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
@@ -176,12 +200,7 @@ export const Home = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="progress-bar-container">
-            <div
-              className="progress-bar"
-              style={{ width: `${(currentIndex + 1) * 25}%` }}
-            ></div>
-          </div>
+          <ProgressBar currentIndex={carouselIndex} totalSlides={4} />
         </section>
         {/* Hiking */}
         <section className="hiking">
@@ -218,15 +237,17 @@ export const Home = () => {
             <div className="arrow-container">
               <button
                 className="arrow-btn"
-                onClick={prevSlide}
-                aria-label="Previous Slide"
+                onClick={() =>
+                  setFeaturedIndex((prev) => (prev > 0 ? prev - 1 : 3))
+                }
               >
                 <img src="./left-chevron.png" alt="Previous" />
               </button>
               <button
                 className="arrow-btn"
-                onClick={nextSlide}
-                aria-label="Next Slide"
+                onClick={() =>
+                  setFeaturedIndex((prev) => (prev < 3 ? prev + 1 : 0))
+                }
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
@@ -362,12 +383,7 @@ export const Home = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="progress-bar-container">
-            <div
-              className="progress-bar"
-              style={{ width: `${(currentIndex + 1) * 25}%` }}
-            ></div>
-          </div>
+          <ProgressBar currentIndex={featuredIndex} totalSlides={4} />
         </section>
 
         <section className="featured-carousel-container">
@@ -522,12 +538,7 @@ export const Home = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="progress-bar-container">
-            <div
-              className="progress-bar"
-              style={{ width: `${(currentIndex + 1) * 25}%` }}
-            ></div>
-          </div>
+          <ProgressBar currentIndex={currentIndex} totalSlides={4} />
         </section>
 
         <section className="about-trika-container">
@@ -684,15 +695,17 @@ export const Home = () => {
             <div className="arrow-container">
               <button
                 className="arrow-btn"
-                onClick={prevSlide}
-                aria-label="Previous Slide"
+                onClick={() =>
+                  setRecentlyViewedIndex((prev) => (prev > 0 ? prev - 1 : 3))
+                }
               >
                 <img src="./left-chevron.png" alt="Previous" />
               </button>
               <button
                 className="arrow-btn"
-                onClick={nextSlide}
-                aria-label="Next Slide"
+                onClick={() =>
+                  setRecentlyViewedIndex((prev) => (prev < 3 ? prev + 1 : 0))
+                }
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
@@ -762,12 +775,7 @@ export const Home = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="progress-bar-container">
-            <div
-              className="progress-bar"
-              style={{ width: `${(currentIndex + 1) * 25}%` }}
-            ></div>
-          </div>
+          <ProgressBar currentIndex={recentlyViewedIndex} totalSlides={4} />
         </section>
 
         <section className="join-trika">
