@@ -200,7 +200,11 @@ export const MegaMenu = () => {
           {/* Hamburger Icon */}
           {isMobile && (
             <div className="hamburger-icon" onClick={toggleMenu}>
-              <FaBars />
+              <FaBars
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              />
             </div>
           )}
         </div>

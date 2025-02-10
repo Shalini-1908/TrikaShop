@@ -29,7 +29,7 @@ import { ProgressBar } from "../Components/ProgressBar";
 
 export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  //states for progressbar
+  //states for progressbar ->
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [featuredIndex, setFeaturedIndex] = useState(0);
   const [recentlyViewedIndex, setRecentlyViewedIndex] = useState(0);
@@ -139,22 +139,6 @@ export const Home = () => {
                 Lorem lpsum Dolor Sit Amet, Consectetur Adipiscing Elit
               </p>
             </div>
-            {/* <div className="arrow-container">
-              <button
-                className="arrow-btn"
-                onClick={prevSlide}
-                aria-label="Previous Slide"
-              >
-                <img src="./left-chevron.png" alt="Previous" />
-              </button>
-              <button
-                className="arrow-btn"
-                onClick={nextSlide}
-                aria-label="Next Slide"
-              >
-                <img src="./right-chevron.png" alt="Next" />
-              </button>
-            </div> */}
 
             <div className="arrow-container">
               <button
