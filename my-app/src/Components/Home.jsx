@@ -70,29 +70,15 @@ export const Home = () => {
               color: "white",
               borderRadius: "50%",
               cursor: "pointer",
+
+             
             }}
           ></div>
         </div>
 
         {isOpen && (
           <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              maxWidth: "1400px",
-              width: "94%",
-              height: "500px",
-              backgroundColor: "white",
-              margin: "0 auto",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              paddingTop: "20px",
-              zIndex: 1000,
-            }}
-          >
+          className="shipping">
             <button
               onClick={() => setIsOpen(false)}
               style={{
@@ -247,8 +233,10 @@ export const Home = () => {
                 <img src={bag} alt="image 2" className="image-image" />
               </div>
               <div className="image-content">
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
                 <img src={stars} alt="Rating" className="image-rating" />
               </div>
@@ -260,8 +248,6 @@ export const Home = () => {
                   <img src={heart} alt="Heart Icon" />
                 </div>
                 <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
                 <div className="product-color-options">
                   <div
                     className="product-color-circle"
@@ -284,10 +270,17 @@ export const Home = () => {
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+              </div>
+              <div className="image-content-with-color">
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
+                </div>
               </div>
             </div>
 
@@ -297,8 +290,6 @@ export const Home = () => {
                   <img src={heart} alt="Heart Icon" />
                 </div>
                 <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
                 <div className="product-color-options">
                   <div
                     className="product-color-circle"
@@ -321,10 +312,17 @@ export const Home = () => {
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+              </div>
+              <div className="image-content-with-color">
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
+                </div>
               </div>
             </div>
 
@@ -334,8 +332,6 @@ export const Home = () => {
                   <img src={heart} alt="Heart Icon" />
                 </div>
                 <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
                 <div className="product-color-options">
                   <div
                     className="product-color-circle"
@@ -358,10 +354,17 @@ export const Home = () => {
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+              </div>
+              <div className="image-content-with-color">
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
+                </div>
               </div>
             </div>
           </div>
@@ -399,11 +402,13 @@ export const Home = () => {
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="image 2" className="image-image" />
+                <img src={bag} alt="image 1" className="image-image" />
               </div>
               <div className="image-content">
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
                 <img src={stars} alt="Rating" className="image-rating" />
               </div>
@@ -415,8 +420,6 @@ export const Home = () => {
                   <img src={heart} alt="Heart Icon" />
                 </div>
                 <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
                 <div className="product-color-options">
                   <div
                     className="product-color-circle"
@@ -439,21 +442,26 @@ export const Home = () => {
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+              </div>
+              <div className="image-content-with-color">
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
+                </div>
               </div>
             </div>
 
             <div className="image-grid">
-              <div className="image-card">
+            <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
+                <img src={bag} alt="image 3" className="image-image" />
                 <div className="product-color-options">
                   <div
                     className="product-color-circle"
@@ -476,21 +484,26 @@ export const Home = () => {
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+              </div>
+              <div className="image-content-with-color">
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
+                </div>
               </div>
             </div>
 
             <div className="image-grid">
-              <div className="image-card">
+            <div className="image-card">
                 <div className="heart-icon">
                   <img src={heart} alt="Heart Icon" />
                 </div>
-                <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
+                <img src={bag} alt="image 4" className="image-image" />
                 <div className="product-color-options">
                   <div
                     className="product-color-circle"
@@ -513,10 +526,17 @@ export const Home = () => {
                     style={{ backgroundColor: "#c79999" }}
                   ></div>
                 </div>
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+              </div>
+              <div className="image-content-with-color">
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
+                </div>
               </div>
             </div>
           </div>
@@ -705,8 +725,10 @@ export const Home = () => {
                 <img src={bag} alt="image 2" class="image-image" />
               </div>
               <div class="image-content">
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
                 <img src={stars} alt="Rating" class="image-rating" />
               </div>
@@ -720,8 +742,10 @@ export const Home = () => {
                 <img src={bag} alt="image 2" class="image-image" />
               </div>
               <div class="image-content">
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
                 <img src={stars} alt="Rating" class="image-rating" />
               </div>
@@ -735,8 +759,10 @@ export const Home = () => {
                 <img src={bag} alt="image 2" class="image-image" />
               </div>
               <div class="image-content">
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
                 <img src={stars} alt="Rating" class="image-rating" />
               </div>
@@ -750,8 +776,10 @@ export const Home = () => {
                 <img src={bag} alt="image 2" class="image-image" />
               </div>
               <div class="image-content">
-                <p className="brand-name">Nike</p>
-                <p className="product-name">Men's Running Shoes</p>
+                <p className="brand-name">Adidas</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
                 <p>$120.00</p>
                 <img src={stars} alt="Rating" class="image-rating" />
               </div>
@@ -777,7 +805,7 @@ export const Home = () => {
             </div>
           </span>
         </section>
-
+      {/* footer */}
         <Footer />
       </main>
     </div>

@@ -14,11 +14,27 @@
   width: 100%;
 }
 
+.shipping {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1400px;
+  width: 94%;
+  height: 500px;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
 .text {
   color: white;
   text-align: center;
   padding: 10px;
-
   position: relative;
 }
 
@@ -238,6 +254,12 @@
   transform: scale(1);
 }
 
+.community-image {
+  width: 100%;
+  max-width: 155px;
+  height: 200px;
+}
+
 /* Stories */
 
 .stories-carousel-container {
@@ -349,7 +371,7 @@
 
 .community-image {
   width: 100%;
-  max-width: 155px;
+  max-width: 185px;
   height: 200px;
 }
 
@@ -367,6 +389,7 @@
   margin: 0 auto;
   text-align: center;
 }
+
 .buy-photos p {
   font-size: 12px;
 }
@@ -446,7 +469,7 @@
 
 .image-grid {
   display: grid;
-  max-height: 520px;
+  /* max-height: 520px; */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin: 0 auto;
   position: relative;
@@ -454,6 +477,7 @@
 
 .image-card {
   display: flex;
+  height: 350px;
   flex-direction: column;
   text-align: left;
   gap: 20px;
@@ -475,12 +499,26 @@
   align-items: flex-start;
   margin-top: 20px;
   justify-content: center;
+  line-height: 35px;
+}
+
+.image-content-with-color .brand-name {
+  color: #a0a0a0;
+  margin-top: 40px;
+}
+
+.image-content-with-color {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 35px;
 }
 
 .product-color-options {
   display: flex;
   gap: 8px;
-  margin-bottom: 8px;
+  margin: 10px 0px;
 }
 
 .product-color-circle {
@@ -497,6 +535,10 @@
 }
 
 .image-content .brand-name {
+  color: #a0a0a0;
+}
+
+.image-content-with-color .brand-name {
   color: #a0a0a0;
 }
 
@@ -573,6 +615,10 @@
 
   text-align: center;
   margin: 50px auto;
+}
+
+.why-shop-carousel-heading {
+  font-size: 2rem;
 }
 
 .shop-columns {
@@ -778,6 +824,7 @@
     padding: 15px 50px;
     font-size: 1rem;
   }
+
   .carousel-content {
     z-index: 2;
     display: flex;
@@ -879,6 +926,7 @@
     margin: 0 auto;
     position: relative;
   }
+
   .carousel-container {
     padding: 0px 20px;
     width: 100%;
@@ -925,9 +973,9 @@
     justify-content: space-between;
   }
 
-  .about-trika-container img {
+  /* .about-trika-container img {
     height: 400px;
-  }
+  } */
 
   .about-trika button {
     padding: 15px 30px;
@@ -956,7 +1004,7 @@
   }
 
   .join-trika p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
   }
 
@@ -1064,6 +1112,22 @@
 }
 
 @media (max-width: 480px) {
+  .shipping {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1400px;
+    width: 100%;
+    height: 285px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    z-index: 1000;
+  }
   .banner-content {
     position: static;
     padding: 10px;
@@ -1071,6 +1135,10 @@
     background: white;
     text-align: left;
     width: 100%;
+  }
+
+  .why-shop-carousel-heading {
+    font-size: 1.4rem;
   }
 
   .stories-heading-container {
@@ -1167,6 +1235,7 @@
     display: flex;
     flex-direction: column;
   }
+
   .carousel-image {
     max-width: 100%;
   }
@@ -1174,6 +1243,7 @@
   .arrow-container {
     display: none;
   }
+
   .hiking {
     width: 100%;
     height: auto;
@@ -1253,5 +1323,38 @@
     margin: 35px auto;
     gap: 10px;
     width: 100%;
+  }
+
+  .image-card {
+    display: flex;
+    height: 270px;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+    background-color: #eeeeee;
+  }
+
+  .product-color-options {
+    margin: 10px 0px;
+  }
+
+  .image-content-with-color .brand-name {
+    color: #a0a0a0;
+  }
+
+  .image-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 35px;
+  }
+
+  .image-content-with-color {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 35px;
   }
 }

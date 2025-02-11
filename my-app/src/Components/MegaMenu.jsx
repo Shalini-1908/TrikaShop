@@ -185,17 +185,28 @@ export const MegaMenu = () => {
                 className="search"
                 placeholder="Search for products..."
               />
-            </div>
-          ) : (
-            // Only Search Icon on Mobile
-            <FaSearch className="search-icon" onClick={toggleSearchModal} />
-          )}
-
-          <div className="icon-group">
+                <div className="icon-group">
             <img src="./user.png" alt="User Account" />
             <img src="./heart.png" alt="Favorites" />
             <img src="./shopping-bag.png" alt="Shopping Bag" />
           </div>
+            </div>
+          ) : (
+            // Only Search Icon on Mobile
+            <>
+   
+         
+            <div className="icon-group">
+            <FaSearch className="search-icon" onClick={toggleSearchModal} />
+            <img src="./shopping-bag.png" alt="Shopping Bag" />
+            <img src="./user.png" alt="User Account" />
+            {/* <img src="./heart.png" alt="Favorites" /> */}
+         
+          </div>
+          </>
+          )}
+
+        
 
           {/* Hamburger Icon */}
           {isMobile && (
