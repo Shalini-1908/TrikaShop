@@ -14,6 +14,18 @@
   width: 100%;
 }
 
+.discount-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  gap: 5px
+}
+
+.discount-header label{
+  font-size: 12px;
+}
+
 .shipping {
   position: fixed;
   top: 0;
@@ -29,6 +41,20 @@
   justify-content: center;
   padding-top: 20px;
   z-index: 1000;
+  border: none;
+}
+
+.shipping button{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 16px
 }
 
 .text {
@@ -394,17 +420,18 @@
   font-size: 12px;
 }
 
-.buy-photos button {
+.shop-insta {
   border: none;
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-weight: 600;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  font-size: 12px;
 }
 
 /* Featured Carousal */
@@ -497,36 +524,105 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   justify-content: center;
   line-height: 35px;
 }
 
 .image-content-with-color .brand-name {
   color: #a0a0a0;
-  margin-top: 40px;
+
 }
 
 .image-content-with-color {
   display: flex;
+  /* border: 1px solid red; */
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   line-height: 35px;
+  /* height: 175px; */
 }
 
 .product-color-options {
   display: flex;
   gap: 8px;
-  margin: 10px 0px;
+  margin: 15px 0px;
 }
 
-.product-color-circle {
+.product-color-options li{
+  list-style: none;
+}
+
+
+
+.product-color-circle-1{
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 1px solid #ddd;
   cursor: pointer;
+  background-color: #7f9cb9;
+  
+  
+  
+ 
+}
+
+.product-color-circle-2{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color: #262628;
+ 
+}
+
+.product-color-circle-3{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color:#b79a7a;
+  
+}
+
+.product-color-circle-4{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color: #f4ede6;
+  
+}
+
+.product-color-circle-5{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color:  #c79999;
+ 
+}
+
+.product-color-max{
+  color: #888888;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-height: 30px;
+  font-size: 12px;
+
 }
 
 .image-rating {
@@ -543,11 +639,25 @@
 }
 
 .product-name {
-  font-size: 18px;
+  font-size: 16px;
   color: black;
   line-height: 1.2;
   text-align: left;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.discounted-price{
+  color: #ec3024;
+}
+
+.previous-price{
+  text-decoration:line-through;
+  font-weight: 400;
+}
+
+.final-price{
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .featured-carousel-image.active {
@@ -586,12 +696,14 @@
   padding: 20px 30px;
 }
 
-.about-trika button {
+.read-story {
+  width: 125px;
+  height: 40px;
   margin-right: 68px;
   border: none;
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-weight: 600;
   border-radius: 5px;
   display: flex;
@@ -973,9 +1085,7 @@
     justify-content: space-between;
   }
 
-  /* .about-trika-container img {
-    height: 400px;
-  } */
+
 
   .about-trika button {
     padding: 15px 30px;
@@ -1335,7 +1445,7 @@
   }
 
   .product-color-options {
-    margin: 10px 0px;
+    margin: 15px 0px;
   }
 
   .image-content-with-color .brand-name {

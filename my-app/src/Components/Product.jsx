@@ -501,7 +501,7 @@ export const Product = () => {
               <div className="join-search-wrapper">
                 <input
                   type="text"
-                  className="join-search"
+                  className="join-email"
                   placeholder="Enter Your Email"
                 />
                 <img src={arrow} alt="Submit" />

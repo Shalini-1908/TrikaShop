@@ -45,88 +45,38 @@ export const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="container">
-      <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "10px 30px",
-            gap: "5px",
-          }}
-        >
-          <label style={{ fontSize: "12px" }}>
-            Get $15 For Every $100 Spent
-          </label>
-          <IoIosArrowDown cursor={"pointer"} onClick={() => setIsOpen(true)} />
-          <div
-            style={{
-              width: "20px",
-              height: "20px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "black",
-              color: "white",
-              borderRadius: "50%",
-              cursor: "pointer",
+      <header aria-describedby="discount-header" className="discount-header">
+        <label>Get $15 For Every $100 Spent</label>
+        <IoIosArrowDown cursor={"pointer"} onClick={() => setIsOpen(true)} />
+      </header>
 
-             
-            }}
-          ></div>
-        </div>
+      {isOpen && (
+        <dialog className="shipping" aria-haspopup="dialog">
+          <button onClick={() => setIsOpen(false)}>✕</button>
+        </dialog>
+      )}
 
-        {isOpen && (
-          <div
-          className="shipping">
-            <button
-              onClick={() => setIsOpen(false)}
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "15px",
-                backgroundColor: "transparent",
-                color: "black",
-                border: "1px solid black",
-                padding: "10px 15px",
-                cursor: "pointer",
-                borderRadius: "50%",
-                fontSize: "16px",
-              }}
-            >
-              ✕
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* Main Wrapper */}
-
-      <main className="main-wrapper">
+      <main aria-labelledby="main" className="main-wrapper">
         <MegaMenu />
-
-        <section className="banner">
-          <div className="banner-content">
+        <section className="banner" aria-labelledby="banner">
+          <section className="banner-content">
             <h1 className="banner-heading">GET CHANGED.</h1>
             <h1 className="banner-heading">STAY WARM.</h1>
             <p>Outdoor gear to keep you going. Any weather, anywhere.</p>
-            <a href="#shop-now" className="banner-button">
-              Shop Now
-            </a>
-          </div>
+            <button className="banner-button">Shop Now</button>
+          </section>
         </section>
 
-        {/* Carousel Section */}
-        <section className="carousel-container">
+        <section className="carousel-container" aria-describedby="carousel">
           <div className="carousel-content">
-            <div className="text-container">
+            <article className="text-container">
               <h1 className="carousel-heading">EVERY SIDE OF STRONG</h1>
               <p className="carousel-subheading">
-                Lorem lpsum Dolor Sit Amet, Consectetur Adipiscing Elit
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit
               </p>
-            </div>
+            </article>
 
-            <div className="arrow-container">
+            <nav className="arrow-container">
               <button
                 className="arrow-btn"
                 onClick={() =>
@@ -143,10 +93,10 @@ export const Home = () => {
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
-            </div>
+            </nav>
           </div>
 
-          <div className="carousel-images">
+          <figure className="carousel-images">
             <img
               src={sleepingbags}
               alt="Sleeping Bags"
@@ -167,34 +117,37 @@ export const Home = () => {
               alt="Best Sellers"
               className={`carousel-image ${currentIndex === 3 ? "active" : ""}`}
             />
-          </div>
+          </figure>
 
-          {/* Progress Bar */}
-          <ProgressBar currentIndex={carouselIndex} totalSlides={4} />
+          <section aria-labelledby="progress-bar">
+            <ProgressBar currentIndex={carouselIndex} totalSlides={4} />
+          </section>
         </section>
-        {/* Hiking */}
+
         <section className="hiking">
-          <div className="hiking-content">
+          <section className="hiking-content">
             <h1 className="hiking-heading">PACK IN THE ADVENTURE.</h1>
 
             <p>
               With room for water,snacks and extra layers,these hiking jackets
               are tried and trusted for the trails ahead
             </p>
-            <a href="#shop-now" className="banner-button">
-              Shop Hkiing Gears
-            </a>
-          </div>
+            <button className="banner-button">Shop Hiking Gears</button>
+          </section>
         </section>
 
-        {/* For your next adventure */}
-        <section className="featured-carousel-container">
-          <div className="featured-carousel-content">
-            <div className="featured-heading-container">
-              <h1 className="featured-carousel-heading">
-                FOR YOUR NEXT ADVENTURE
-              </h1>
-              <div className="featured-carousel-text">
+        <section
+          className="featured-carousel-container"
+          aria-describedby="carousel"
+        >
+          <section className="featured-carousel-content">
+            <section className="featured-heading-container">
+              <header>
+                <h1 className="featured-carousel-heading">
+                  FOR YOUR NEXT ADVENTURE
+                </h1>
+              </header>
+              <section className="featured-carousel-text">
                 <ul>
                   <li>NEW ARRIVALS</li>
                   <li>JACKETS</li>
@@ -202,9 +155,10 @@ export const Home = () => {
                   <li>BAGS & GEAR</li>
                   <li></li>
                 </ul>
-              </div>
-            </div>
-            <div className="arrow-container">
+              </section>
+            </section>
+
+            <nav className="arrow-container">
               <button
                 className="arrow-btn"
                 onClick={() =>
@@ -221,58 +175,73 @@ export const Home = () => {
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
-            </div>
-          </div>
+            </nav>
+          </section>
 
-          <div className="featured-carousel-images">
-            <div className="image-grid">
-              <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" className="image-image" />
-              </div>
-              <div className="image-content">
+          <section
+            className="featured-carousel-images"
+            aria-describedby="carousel"
+          >
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <article className="image-content">
                 <p className="brand-name">Adidas</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
-                <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
-              </div>
-            </div>
+                <p className="final-price">$150.00</p>
+                <figure className="rating">
+                  <img src={stars} alt="Rating" />
+                </figure>
+              </article>
+            </section>
 
-            <div className="image-grid">
-              <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <ul className="product-color-options">
+                <li className="product-color-circle-1"></li>
+                <li className="product-color-circle-2"></li>
+                <li className="product-color-circle-3"></li>
+                <li className="product-color-circle-4"></li>
+                <li className="product-color-circle-5"></li>
+                <li className="product-color-max">+ 5 more</li>
+              </ul>
+
+              <article className="image-content-with-color">
+                <p className="brand-name">Levis</p>
+                <p className="product-name">
+                  Women's Class V Pathfinder One-Piece
+                </p>
+                <p className="final-price">$150.00</p>
+                <div className="rating">
+                  <img src={stars} />
+                  <span> (570)</span>
                 </div>
-                <img src={bag} alt="image 2" className="image-image" />
-                <div className="product-color-options">
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#7f9cb9" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#262628" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#b79a7a" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#f4ede6" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#c79999" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="image-content-with-color">
-                <p className="brand-name">Adidas</p>
+              </article>
+            </section>
+
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <ul className="product-color-options">
+                <li className="product-color-circle-1"></li>
+                <li className="product-color-circle-2"></li>
+                <li className="product-color-circle-3"></li>
+              </ul>
+
+              <article className="image-content-with-color">
+                <p className="brand-name">Nike</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
@@ -281,104 +250,56 @@ export const Home = () => {
                   <img src={stars} />
                   <span> (570)</span>
                 </div>
-              </div>
-            </div>
+              </article>
+            </section>
 
-            <div className="image-grid">
-              <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" className="image-image" />
-                <div className="product-color-options">
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#7f9cb9" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#262628" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#b79a7a" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#f4ede6" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#c79999" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="image-content-with-color">
-                <p className="brand-name">Adidas</p>
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <ul className="product-color-options">
+                <li className="product-color-circle-1"></li>
+                <li className="product-color-circle-2"></li>
+                <li className="product-color-circle-3"></li>
+                <li className="product-color-circle-4"></li>
+                <li className="product-color-circle-5"></li>
+                <li className="product-color-max">+ 5 more</li>
+              </ul>
+
+              <article className="image-content-with-color">
+                <p className="brand-name">Levis</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
-                <p>$120.00</p>
+                <span className="rating">
+                  {" "}
+                  <p className="discounted-price">$150.00</p>
+                  <p className="previous-price">$260.00</p>
+                </span>
                 <div className="rating">
-                  <img src={stars} />
+                  <image src={stars} />
                   <span> (570)</span>
                 </div>
-              </div>
-            </div>
+              </article>
+            </section>
+          </section>
 
-            <div className="image-grid">
-              <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" className="image-image" />
-                <div className="product-color-options">
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#7f9cb9" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#262628" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#b79a7a" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#f4ede6" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#c79999" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="image-content-with-color">
-                <p className="brand-name">Adidas</p>
-                <p className="product-name">
-                  Women's Class V Pathfinder One-Piece
-                </p>
-                <p>$120.00</p>
-                <div className="rating">
-                  <img src={stars} />
-                  <span> (570)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Progress Bar */}
-          <ProgressBar currentIndex={featuredIndex} totalSlides={4} />
+          <section aria-labelledby="progress-bar">
+            <ProgressBar currentIndex={featuredIndex} totalSlides={4} />
+          </section>
         </section>
 
-        <section className="featured-carousel-container">
-          <div className="featured-carousel-content">
-            <div className="featured-heading-container">
+        <section
+          className="featured-carousel-container"
+          aria-describedby="carousel-container"
+        >
+          <section className="featured-carousel-content">
+            <header className="featured-heading-container">
               <h1 className="featured-carousel-heading">FEATURED</h1>
-            </div>
-            <div className="arrow-container">
+            </header>
+            <nav className="arrow-container">
               <button
                 className="arrow-btn"
                 onClick={prevSlide}
@@ -393,191 +314,151 @@ export const Home = () => {
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
-            </div>
-          </div>
+            </nav>
+          </section>
 
-          <div className="featured-carousel-images">
-            <div className="image-grid">
-              <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 1" className="image-image" />
-              </div>
-              <div className="image-content">
-                <p className="brand-name">Adidas</p>
-                <p className="product-name">
-                  Women's Class V Pathfinder One-Piece
-                </p>
-                <p>$120.00</p>
-                <img src={stars} alt="Rating" className="image-rating" />
-              </div>
-            </div>
+          <section
+            className="featured-carousel-images"
+            aria-describedby="carousel-container"
+          >
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
 
-            <div className="image-grid">
-              <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" className="image-image" />
-                <div className="product-color-options">
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#7f9cb9" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#262628" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#b79a7a" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#f4ede6" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#c79999" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="image-content-with-color">
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <article className="image-content">
                 <p className="brand-name">Adidas</p>
-                <p className="product-name">
-                  Women's Class V Pathfinder One-Piece
-                </p>
+                <p className="product-name">Men's Tekware Grid Pants</p>
+                <p className="final-price">$150.00</p>
+                <figure className="rating">
+                  <img src={stars} alt="Rating" />
+                </figure>
+              </article>
+            </section>
+
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <ul className="product-color-options">
+                <li className="product-color-circle-1"></li>
+                <li className="product-color-circle-2"></li>
+                <li className="product-color-circle-3"></li>
+                <li className="product-color-circle-4"></li>
+                <li className="product-color-circle-5"></li>
+                <li className="product-color-max">+ 5 more</li>
+              </ul>
+
+              <article className="image-content-with-color">
+                <p className="brand-name">Levis</p>
+                <p className="product-name">Women's Borealis Backpack</p>
                 <p>$120.00</p>
                 <div className="rating">
                   <img src={stars} />
                   <span> (570)</span>
                 </div>
-              </div>
-            </div>
+              </article>
+            </section>
 
-            <div className="image-grid">
-            <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 3" className="image-image" />
-                <div className="product-color-options">
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#7f9cb9" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#262628" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#b79a7a" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#f4ede6" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#c79999" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="image-content-with-color">
-                <p className="brand-name">Adidas</p>
-                <p className="product-name">
-                  Women's Class V Pathfinder One-Piece
-                </p>
-                <p>$120.00</p>
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <ul className="product-color-options">
+                <li className="product-color-circle-1"></li>
+                <li className="product-color-circle-2"></li>
+                <li className="product-color-circle-3"></li>
+              </ul>
+
+              <article className="image-content-with-color">
+                <p className="brand-name">Nike</p>
+                <p className="product-name">Men's Antora Jacket</p>
+                <p className="final-price">$150.00</p>
                 <div className="rating">
                   <img src={stars} />
                   <span> (570)</span>
                 </div>
-              </div>
-            </div>
+              </article>
+            </section>
 
-            <div className="image-grid">
-            <div className="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 4" className="image-image" />
-                <div className="product-color-options">
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#7f9cb9" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#262628" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#b79a7a" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#f4ede6" }}
-                  ></div>
-                  <div
-                    className="product-color-circle"
-                    style={{ backgroundColor: "#c79999" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="image-content-with-color">
-                <p className="brand-name">Adidas</p>
-                <p className="product-name">
-                  Women's Class V Pathfinder One-Piece
-                </p>
-                <p>$120.00</p>
+            <section className="image-grid">
+              <figure className="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" className="image-image" />
+              </figure>
+              <ul className="product-color-options">
+                <li className="product-color-circle-1"></li>
+                <li className="product-color-circle-2"></li>
+                <li className="product-color-circle-3"></li>
+                <li className="product-color-circle-4"></li>
+                <li className="product-color-circle-5"></li>
+                <li className="product-color-max">+ 5 more</li>
+              </ul>
+
+              <article className="image-content-with-color">
+                <p className="brand-name">Levis</p>
+                <p className="product-name">Women's Hypnum Shoes</p>
+                <span className="rating">
+                  {" "}
+                  <p className="discounted-price">$150.00</p>
+                  <p className="previous-price">$260.00</p>
+                </span>
                 <div className="rating">
                   <img src={stars} />
                   <span> (570)</span>
                 </div>
-              </div>
-            </div>
-          </div>
+              </article>
+            </section>
+          </section>
 
-          {/* Progress Bar */}
-          <ProgressBar currentIndex={currentIndex} totalSlides={4} />
+          <section aria-labelledby="progress-bar">
+            <ProgressBar currentIndex={currentIndex} totalSlides={4} />
+          </section>
         </section>
 
-        <section className="about-trika-container">
-          <img src="https://sportano.pl/blog/wp-content/uploads/2023/09/impregnacja-DWR-co-to-jest-i-jak-dziala.jpg" />
-
-          <div className="about-trika">
+        <section
+          className="about-trika-container"
+          aria-describedby="about-company"
+        >
+          <figure>
+            <img src="https://sportano.pl/blog/wp-content/uploads/2023/09/impregnacja-DWR-co-to-jest-i-jak-dziala.jpg" />
+          </figure>
+          <section className="about-trika">
             <p className="about-trika-heading">ABOUT TRIKA</p>
             <p className="trika-mission">
               Our mission is to create exceptional images while upholding our
               responsibility towards Mother Nature,our communities,and the
               future ahead
             </p>
-            <div className="">
-              <button>Read Our Story</button>
-            </div>
-          </div>
+            <button className="read-story">Read Our Story</button>
+          </section>
         </section>
 
-        <section className="community-container">
-          <div className="community-heading-container">
-            <div className="insta-icon">
+        <section className="community-container" aria-describedby="community">
+          <section className="community-heading-container">
+            <figure className="insta-icon">
               <img src={instagram} alt="insta Icon" />
-            </div>
-            <h1 className="community-heading">TRIKA COMMUNITY</h1>
-          </div>
+            </figure>
+            <header>
+              <h1 className="community-heading">TRIKA COMMUNITY</h1>
+            </header>
+          </section>
 
-          <div className="trika-community-text">
+          <section className="trika-community-text">
             <p>
               mention @Trika on instagram for a chance to have your look
               featured in our website, you'll receive an exclusive gift and
               Trika Club points
             </p>
-          </div>
+          </section>
 
-          <div className="community-images">
+          <figure className="community-images">
             <img
               src={community1}
               alt="Sleeping Bags"
@@ -604,37 +485,37 @@ export const Home = () => {
               alt="Best Sellers"
               className="community-image"
             />
-          </div>
+          </figure>
 
-          <div className="buy-photos">
-            <p>click on the photos to buy images</p>
-            <button>Shop Our Instagram</button>
-          </div>
+          <section className="buy-photos">
+            <p>click on the photos to buy products</p>
+            <button className="shop-insta">Shop Our Instagram</button>
+          </section>
         </section>
 
-        <section className="why-shop-container">
-          <div className="why-shop-content">
-            <div className="why-shop-heading-container">
+        <section className="why-shop-container" aria-describedby="why-shop">
+          <section className="why-shop-content">
+            <header className="why-shop-heading-container">
               <h1 className="why-shop-carousel-heading">WHY SHOP AT TRIKA?</h1>
-            </div>
-            <div className="shop-columns">
-              <div className="shop-column">
+            </header>
+            <section className="shop-columns">
+              <article className="shop-column">
                 <img src={packaging} />
                 <ul>
                   <h5>FREE DELIVERY</h5>
                   <li>Complimentory Delivery</li>
                   <li>On Every Single Order.</li>
                 </ul>
-              </div>
-              <div className="shop-column">
+              </article>
+              <article className="shop-column">
                 <img src={dollar} />
                 <ul>
                   <h5>MONEY-BACK GUARANTEE</h5>
                   <li>Free Returns And</li>
                   <li>Exchanges</li>
                 </ul>
-              </div>
-              <div className="shop-column">
+              </article>
+              <article className="shop-column">
                 <img src={verified} />
                 <ul>
                   <h5>SHOP WITH AN EXPERT</h5>
@@ -642,16 +523,19 @@ export const Home = () => {
                   <li>Chat To Have Your Question</li>
                   <li>Answered.</li>
                 </ul>
-              </div>
-            </div>
-          </div>
+              </article>
+            </section>
+          </section>
         </section>
 
-        <section className="stories-carousel-container">
-          <div className="stories-heading-container">
+        <section
+          className="stories-carousel-container"
+          aria-describedby="carousel-container"
+        >
+          <section className="stories-heading-container">
             <h1 className="stories-carousel-heading">STORIES</h1>
             <button>View Our Blog</button>
-          </div>
+          </section>
 
           <div className="stories-carousel-grid">
             <div className="stories-item">
@@ -691,12 +575,15 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="recently-carousel-container">
-          <div className="recently-carousel-content">
-            <div className="recently-heading-container">
+        <section
+          className="recently-carousel-container"
+          aria-describedby="carousel-container"
+        >
+          <section className="recently-carousel-content">
+            <header className="recently-heading-container">
               <h1 className="recently-carousel-heading">RECENTLY VIEWED</h1>
-            </div>
-            <div className="arrow-container">
+            </header>
+            <nav className="arrow-container">
               <button
                 className="arrow-btn"
                 onClick={() =>
@@ -713,99 +600,97 @@ export const Home = () => {
               >
                 <img src="./right-chevron.png" alt="Next" />
               </button>
-            </div>
-          </div>
+            </nav>
+          </section>
 
-          <div className="recently-carousel-images">
-            <div class="image-grid">
-              <div class="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" class="image-image" />
-              </div>
-              <div class="image-content">
+          <section className="recently-carousel-images">
+            <section class="image-grid">
+              <figure class="image-card">
+                <img className="heart-icon" src={heart} alt="Heart" />
+
+                <img src={bag} alt="bag" class="image-image" />
+              </figure>
+              <article class="image-content">
                 <p className="brand-name">Adidas</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
                 <p>$120.00</p>
-                <img src={stars} alt="Rating" class="image-rating" />
-              </div>
-            </div>
+                <img src={stars} alt="Rating" class="rating" />
+              </article>
+            </section>
 
-            <div class="image-grid">
-              <div class="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" class="image-image" />
-              </div>
-              <div class="image-content">
+            <section class="image-grid">
+              <figure class="image-card">
+                <img src={heart} alt="Heart" className="heart-icon" />
+
+                <img src={bag} alt="bag" class="image-image" />
+              </figure>
+              <article class="image-content">
                 <p className="brand-name">Adidas</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
-                <p>$120.00</p>
-                <img src={stars} alt="Rating" class="image-rating" />
-              </div>
-            </div>
+                <p className="final-price">$150.00</p>
+                <img src={stars} alt="Rating" class="rating" />
+              </article>
+            </section>
 
-            <div class="image-grid">
-              <div class="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" class="image-image" />
-              </div>
-              <div class="image-content">
+            <article class="image-grid">
+              <figure class="image-card">
+                <img src={heart} alt="Heart" className="heart-icon" />
+
+                <img src={bag} alt="bag" class="image-image" />
+              </figure>
+              <article class="image-content">
                 <p className="brand-name">Adidas</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
-                <p>$120.00</p>
-                <img src={stars} alt="Rating" class="image-rating" />
-              </div>
-            </div>
+                <p className="final-price">$150.00</p>
+                <img src={stars} alt="Rating" class="rating" />
+              </article>
+            </article>
 
-            <div class="image-grid">
-              <div class="image-card">
-                <div className="heart-icon">
-                  <img src={heart} alt="Heart Icon" />
-                </div>
-                <img src={bag} alt="image 2" class="image-image" />
-              </div>
-              <div class="image-content">
+            <section class="image-grid">
+              <figure class="image-card">
+                <img src={heart} alt="Heart" className="heart-icon" />
+
+                <img src={bag} alt="bag" class="image-image" />
+              </figure>
+              <article class="image-content">
                 <p className="brand-name">Adidas</p>
                 <p className="product-name">
                   Women's Class V Pathfinder One-Piece
                 </p>
-                <p>$120.00</p>
-                <img src={stars} alt="Rating" class="image-rating" />
-              </div>
-            </div>
-          </div>
+                <p className="final-price">$150.00</p>
+                <img src={stars} alt="Rating" class="rating" />
+              </article>
+            </section>
+          </section>
 
-          {/* Progress Bar */}
-          <ProgressBar currentIndex={recentlyViewedIndex} totalSlides={4} />
+          <section aria-labelledby="progress-bar">
+            <ProgressBar currentIndex={recentlyViewedIndex} totalSlides={4} />
+          </section>
         </section>
 
-        <section className="join-trika">
+        <section aria-describedby="join-trika-offer" className="join-trika">
           <p>JOIN TRIKA AND GET 15% OFF</p>
           <span>
-            <div className="join-search-container">
-              <div className="join-search-wrapper">
+            <article className="join-search-container">
+              <aside className="join-search-wrapper">
                 <input
                   type="text"
-                  className="join-search"
+                  className="join-email"
+                  aria-placeholder="join-trika"
+                  aria-describedby="format"
                   placeholder="Enter Your Email"
                 />
                 <img src={arrow} alt="Submit" />
-              </div>
-            </div>
+              </aside>
+            </article>
           </span>
         </section>
-      {/* footer */}
         <Footer />
       </main>
     </div>
